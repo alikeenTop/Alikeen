@@ -52,7 +52,7 @@ async def sledovani_pripojeni(update: Update, context: ContextTypes.DEFAULT_TYPE
 def main():
     threading.Thread(target=run_health_server, daemon=True).start()
     application = Application.builder().token(BOT_TOKEN).build()
-    application.add_handler(ChatMemberHandler(sledovani_pripojeni, ChatMemberHandler.CHAT_MEMBERS))
+    application.add_handler(ChatMemberHandler(sledovani_pripojeni, ChatMemberHandler.CHAT_MEMBER))
     print("Bot bezi...")
     application.run_polling(allowed_updates=[Update.CHAT_MEMBER])
 
